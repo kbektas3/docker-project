@@ -1,0 +1,34 @@
+services:
+  backend:
+    container_name: backend
+    build:
+      context: spring-boot-app/
+    ports:
+      - "8080:8080"
+    restart: always
+    depends_on:
+      - db
+
+  frontend:
+    container_name: frontend
+    ports:
+      - "8081:8081"
+    build:
+      context: node-app/
+    restart: always
+
+  db:
+    image: "postgres:10-alpine"
+    container_name: db
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=demouser
+      - POSTGRES_PASSWORD=DemoPa$$
+      - POSTGRES_DB=demodb
+    # If you want to use volumes, feel free to uncomment this
+    # volumes:
+      # - ./:/var/lib/postgresql/data/
+    restart: always
+
+
