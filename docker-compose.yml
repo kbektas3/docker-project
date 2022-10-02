@@ -24,7 +24,7 @@ services:
       - "5432:5432"
     environment:
       - POSTGRES_USER=demouser
-      - POSTGRES_PASSWORD=DemoPa$$
+      - POSTGRES_PASSWORD=DemoPaSS
       - POSTGRES_DB=demodb
     # If you want to use volumes, feel free to uncomment this
     # volumes:
