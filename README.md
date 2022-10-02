@@ -13,3 +13,5 @@
 ```
 docker-compose up --build -d
 ```
+
+##### Password for database in docker compose file is changed since it doesn't work with dollar signs.

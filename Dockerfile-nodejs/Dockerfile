@@ -8,7 +8,7 @@ WORKDIR /usr/src/app
 #This line copies node configuation files into the work directory. (package.json and package-lock.json)
 COPY package*.json ./
 
-#This line runes npm command that installs npm packages needed for running application with specified version.
+#This line runs npm command that installs npm packages needed for running application with specified version.
 RUN npm install npm@5.6.0
 #This line removes all the node packages not needed for the application, after the application is built.
 RUN rm -rf /usr/local/lib/node_modules/npm
@@ -20,7 +20,7 @@ COPY . .
 
 #This line exposes port 8081 for node app.
 EXPOSE 8081
-#This line start our application (index.js file).
+#This line starts the application (index.js file).
 CMD [ "node", "index.js" ]
 
 
